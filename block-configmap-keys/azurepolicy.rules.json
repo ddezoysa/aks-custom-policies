@@ -10,8 +10,8 @@
   "then": {
     "effect": "[parameters('effect')]",
     "details": {
-      "constraintTemplate": "https://raw.githubusercontent.com/Azure/Community-Policy/master/Policies/Kubernetes/block-default-namespace/template.yaml",
-      "constraint": "https://raw.githubusercontent.com/Azure/Community-Policy/master/Policies/Kubernetes/block-default-namespace/constraint.yaml",
+      "constraintTemplate": "https://raw.githubusercontent.com/ddezoysa/aks-custom-policies/master/block-configmap-keys/template.yaml",
+      "constraint": "https://raw.githubusercontent.com/ddezoysa/aks-custom-policies/master/block-configmap-keys/constraint.yaml",
       "values": {
         "excludedNamespaces": "[parameters('excludedNamespaces')]",
         "restrictedKeys": "[parameters('restrictedKeys')]"
