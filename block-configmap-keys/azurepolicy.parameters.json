@@ -1,0 +1,39 @@
+{
+  "effect": {
+    "type": "String",
+    "metadata": {
+      "displayName": "Effect",
+      "description": "Enable or disable the execution of the policy"
+    },
+    "allowedValues": [
+      "audit",
+      "deny",
+      "disabled"
+    ],
+    "defaultValue": "audit"
+  },
+  "excludedNamespaces": {
+    "type": "Array",
+    "metadata": {
+      "displayName": "Namespace exclusions",
+      "description": "List of Kubernetes namespaces to exclude from policy evaluation. Providing a value for this parameter is optional."
+    },
+    "defaultValue": [
+      "kube-system",
+      "gatekeeper-system",
+      "azure-arc"
+    ]
+  },
+  "restrictedKeys": {
+    "type": "Array",
+    "metadata": {
+      "displayName": "Restricted Key Names",
+      "description": "List of Key names which needs to be restricted from ConfigMaps."
+    },
+    "defaultValue": [
+      "username",
+      "password",
+      "token"
+    ]
+  }
+}
