@@ -1,9 +1,9 @@
 {
   "properties": {
-    "displayName": "Block usage of the restricted keys in ConfgMaps",
+    "displayName": "Kubernetes cluster ConfigMaps should not have restricted keys.",
     "policyType": "Custom",
     "mode": "Microsoft.Kubernetes.Data",
-    "description": "This policy blocks defined keys in ConfigMaps. For instructions on using this policy, please go to https://github.com/ddezoysa",
+    "description": "This policy will restrict ConfigMaps to have restricted keys such as usernames and passwords, please go to https://github.com/ddezoysa/block-configmap-keys",
     "metadata": {
       "version": "1.0.0-preview",
       "category": "Kubernetes PSP",
@@ -60,8 +60,8 @@
       "then": {
         "effect": "[parameters('effect')]",
         "details": {
-          "constraintTemplate": "https://raw.githubusercontent.com/Azure/Community-Policy/master/Policies/Kubernetes/block-default-namespace/template.yaml",
-          "constraint": "https://raw.githubusercontent.com/Azure/Community-Policy/master/Policies/Kubernetes/block-default-namespace/constraint.yaml",
+          "constraintTemplate": "https://raw.githubusercontent.com/ddezoysa/aks-custom-policies/master/block-configmap-keys/template.yaml",
+          "constraint": "https://raw.githubusercontent.com/ddezoysa/aks-custom-policies/master/block-configmap-keys/constraint.yaml",
           "values": {
             "excludedNamespaces": "[parameters('excludedNamespaces')]",
             "restrictedKeys": "[parameters('restrictedKeys')]"
